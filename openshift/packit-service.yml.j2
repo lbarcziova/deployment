@@ -51,6 +51,8 @@ spec:
           env:
             - name: DEPLOYMENT
               value: {{ deployment }}
+            - name: DISTGIT_URL
+              value: {{ "src.fedoraproject.org" if deployment == "prod" else "src.stg.fedoraproject.org" }}
             - name: REDIS_SERVICE_HOST
               value: redis
             - name: POSTGRESQL_USER
